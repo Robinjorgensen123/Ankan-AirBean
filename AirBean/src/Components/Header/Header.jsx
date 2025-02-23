@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './Header.scss';
+import navIcon from './navicon.png'; // importerar hamburgermeny bilden
 
 const Header = () => {
             // håller koll på om nenyn är öppen eller stängd
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+   
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        console.log('button clicked');
     }
 
 
@@ -14,11 +17,16 @@ const Header = () => {
         <header className="header">
             <section className="header-container">
                 <button className='hambuger-button' onClick={toggleMenu}>
-                    <img 
-                    src="\src\Components\Header\navicon.png" 
+                    <img className='hambuger-icon'
+                    src={navIcon} 
                     alt="hamburger-menu" 
                     />
-                    </button> 
+                    </button>
+                    <section>
+                        <button>
+
+                        </button>
+                    </section>
 
             </section>
         
