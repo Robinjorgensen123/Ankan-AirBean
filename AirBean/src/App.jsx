@@ -11,8 +11,6 @@ function App() {
    <Header />
     <div className='app-container'>
 
-
-
     </div>
     </>
   )
