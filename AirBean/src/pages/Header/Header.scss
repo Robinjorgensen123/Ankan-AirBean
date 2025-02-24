@@ -31,6 +31,19 @@
     top: 16px;
     left: 299px;
     
+    
+}
+
+.cart-item-count {
+    position: absolute;
+    background-color: #f4511e;
+    border-radius: 50%;
+    top: 12px;
+    width: 22px;
+    height: 22px;
+    transform: rotate(-180deg);
+    text-align: center;
+
 }
 
 

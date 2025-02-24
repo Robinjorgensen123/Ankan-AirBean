@@ -32,8 +32,9 @@ const Header = () => {
                         src={bagIcon}
                         alt="cart-icon"
                         />
-                        <span className='cart-item-count'>{/*hit skickas props från meny sidan */}</span>
+                         <span className='cart-item-count'>0{/*hit skickas props från meny sidan */}</span>
                         </button>
+                        
                     </section>
 
             </section>
