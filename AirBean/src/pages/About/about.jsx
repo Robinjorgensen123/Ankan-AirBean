@@ -1,6 +1,6 @@
 import React from 'react';
 import './about.scss';
-import evaImage from '../../assets/images/eva-cortado.jpg';
+import evaImage from '../../assets/Images/eva-cortado.jpg';
 
 function About() {
   return (
@@ -57,3 +57,4 @@ function About() {
 }
 
 export default About;
+
