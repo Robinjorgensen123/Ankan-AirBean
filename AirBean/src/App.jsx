@@ -1,5 +1,6 @@
 import Header from './Components/Header/Header'
 import './App.css'
+import About from './pages/About/about' 
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <>
    <Header />
     <div className='app-container'>
-
+    <About />
     </div>
     </>
   )

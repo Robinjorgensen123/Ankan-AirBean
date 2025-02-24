@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
+
+.coffee-page {
+  padding: 2rem;
+  max-width: 375px;
+  margin: 0 auto;
+  background-color: #F3E4E1;
+
+  .coffee-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    h1 {
+      text-align: left;
+      font-family: 'PT Serif', serif;
+      margin-bottom: 1rem;
+      font-size: 42px;
+      font-weight: 700;
+      color: #2F2926;
+    }
+
+    .coffee-description {
+      margin-bottom: 3rem;
+      
+      p {
+        line-height: 19.2px;
+        margin-bottom: 1.5rem;
+        color: #2F2926;
+        font-size: 12px;
+        font-weight: 400;
+    
+        &:first-child { 
+          font-weight: 700;
+        }
+      }
+    }
+
+    .barista-profile {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      
+      
+      img {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block; 
+        margin: 0 auto;
+      }
+
+      .profile-info {
+        text-align: center;
+
+        h3 {
+          margin: 0;
+          font-weight: 700;
+          color: #2F2926;
+          font-size: 22px;
+          line-height: 35.2px;
+          font-family: 'PT Serif', serif;
+        }
+        
+        p {
+          margin: 0;
+          color: #2F2926;
+          font-size: 12px;
+          line-height: 19.2px;
+          font-family: 'Work Sans', sans-serif;
+        }
+      }
+    }
+  }
+}
