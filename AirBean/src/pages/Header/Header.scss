@@ -1,0 +1,54 @@
+
+
+
+.hamburger-button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 300ms ease-out;
+    height: 48px;
+    width: 48px;
+    top: 16px;
+    left: 16px;
+    background-color: white;
+    border-radius: 50%;
+    
+}
+
+.hamburger-icon {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+
+.cart-button {
+    height: 60px;
+    width: 60px;
+    background-color:#2f2926 ;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 16px;
+    left: 299px;
+    
+}
+
+
+.cart-icon {
+    height: 21px;
+    width: 16px;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 16px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+}
+
