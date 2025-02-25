@@ -25,7 +25,7 @@ const Header = () => {
                     alt="hamburger-menu"
                     />
                     </button>
-                    {isMenuOpen && <Navbar />}
+                    {isMenuOpen && <Navbar closeMenu={isMenuOpen} setCloseMenu={setIsMenuOpen}/>}
                     <section>
                         <button className='cart-button'>
                         <img className='cart-icon'

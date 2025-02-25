@@ -1,15 +1,21 @@
-@use "/src/App.css" as *;
+/* @import "../../GlobalCSS/_Variables"; */
+@use "../../GlobalCSS/Variables" as *;
 
+
+* {
+    font-family: $fontStyle;
+}
 
 .navbar {
     display: flex;
-    width: 375px;
+    flex-direction: column;
+    position: absolute;
+    min-width: $MainCardWidth;
     height: 100vh;
     background-color: #2f2926;
     color: white;
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 100;
 }
@@ -20,5 +26,32 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    border: 5px solid green;
+    height: 100%;
+}
 
+/* .links a {
+    font-family: pt-serif, weight(700);
+} */
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    align-self: flex-start;
+}
+
+.x-icon {
+    width: 48px;
+    height: 48px;
+    justify-self: flex-end;
+    cursor: pointer;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
 }
