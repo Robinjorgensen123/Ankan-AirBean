@@ -4,7 +4,9 @@ import Header from '../Header/Header';
 import About from '../../pages/About/about';
 import Status from '../../pages/Status/Status';
 
+//Routing komponenten som innehåller Header och Routes
 const Routing = () => {
+
   return (
     <div>
       <Router>
