@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-import Routing from './Components/Routing/Routing'
-
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';  // Importera Router
+import Routing from './Components/Routing/Routing'; // Importera Routing-komponenten
+import { Navbar } from './Components/Navbar/Navbar'; // Importera Navbar-komponenten
+import About from './pages/About/about';
 
 function App() {
-
-
   return (
-    <>
-
-    <div className='app-container'>
-   
-    </div>
-    </>
-  )
+    <Router> 
+      <div className="app-container">
+        <About/>
+      </div>
+    </Router>  
+  );
 }
 
-export default App
+export default App;

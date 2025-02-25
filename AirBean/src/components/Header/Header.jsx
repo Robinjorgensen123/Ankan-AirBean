@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import './Header.scss';
 import navIcon from './navicon.png'; // importerar hamburgermeny bilden
 import bagIcon from "./bag.png"; // importerar kundvagns bilden
+import { Navbar } from '../Navbar/Navbar';
 
 const Header = () => {
             // håller koll på om nenyn är öppen eller stängd
     const [isMenuOpen, setIsMenuOpen] = useState(false);
             // håller koll på hur många items som finns i kundvagnen
     
-
-   
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
         console.log('button clicked');
@@ -23,9 +22,10 @@ const Header = () => {
                 <button className='hamburger-button' onClick={toggleMenu}>
                     <img className='hambuger-icon'
                     src={navIcon} 
-                    alt="hamburger-menu" 
+                    alt="hamburger-menu"
                     />
                     </button>
+                    {isMenuOpen && <Navbar />}
                     <section>
                         <button className='cart-button'>
                         <img className='cart-icon'

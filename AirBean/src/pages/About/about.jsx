@@ -1,11 +1,15 @@
 import React from 'react';
 import './about.scss';
 import evaImage from '../../assets/Images/eva-cortado.jpg';
+import Header from '../../Components/Header/Header';
 
 function About() {
   return (
+    
     <div className="coffee-page">
+      <Header/>
       <div className="coffee-content">
+        
         <h1>Vårt kaffe</h1>
         
         <section className="coffee-description">

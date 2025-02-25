@@ -5,13 +5,11 @@
     z-index: 1000;
     width: 100%;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     justify-content: center;
     background-color: transparent;
     width: 375px;
     background-image: url("/src/assets/Images/image.png");
-    
+    margin: 0 auto;
 }
 
 .hamburger-button {

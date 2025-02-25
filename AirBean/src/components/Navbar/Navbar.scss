@@ -1,0 +1,24 @@
+@use "/src/App.css" as *;
+
+
+.navbar {
+    display: flex;
+    width: 375px;
+    height: 100vh;
+    background-color: #2f2926;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
