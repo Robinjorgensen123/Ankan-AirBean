@@ -1,30 +1,29 @@
-import { use } from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importera useNavigate
 import droneImg from "../../assets/Images/drone.png";
-import "./StatusPage.scss"
-import { Navigate, useNavigate } from "react-router-dom";
+import "./StatusPage.scss";
 
+const Status = () => {
+  const navigate = useNavigate(); // Skapa navigate-funktionen
 
-const StatusPage = () => {
+  const handleClick = () => {
+    navigate('/about'); // När knappen trycks, navigera till /about
+  };
 
-    const handleClick = () => {
-        Navigate('/about')
-    }
-
-
-    return (
-        <article className="status-container">
-        <div className="status-card">
-            <p>Ordernummer </p>
-            <img className="drone-img"  
-            src={droneImg}
-             alt="drone" 
-             />
-            <h1>Din beställning <br></br> är påväg!</h1>
-            <p>test</p>
-            <button className="cool-btn" onClick={handleClick}>Ok, cool!</button>
-        </div>
+  return (
+    <article className="status-container">
+      <div className="status-card">
+        <p>Ordernummer </p>
+        <img className="drone-img"  
+          src={droneImg} 
+          alt="drone" 
+        />
+        <h1>Din beställning <br /> är påväg!</h1>
+        <p>test</p>
+        <button className="cool-btn" onClick={handleClick}>Ok, cool!</button>
+      </div>
     </article>
-    );
+  );
 };
 
 export default Status;
