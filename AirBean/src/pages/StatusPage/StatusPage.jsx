@@ -1,12 +1,13 @@
 import { use } from "react";
 import droneImg from "../../assets/Images/drone.png";
 import "./StatusPage.scss"
+import { Navigate, useNavigate } from "react-router-dom";
 
 
-const Status = () => {
+const StatusPage = () => {
 
-    const hadleClick = () => {
-
+    const handleClick = () => {
+        Navigate('/about')
     }
 
 
@@ -20,7 +21,7 @@ const Status = () => {
              />
             <h1>Din beställning <br></br> är påväg!</h1>
             <p>test</p>
-            <button className="cool-btn" >Ok, cool!</button>
+            <button className="cool-btn" onClick={handleClick}>Ok, cool!</button>
         </div>
     </article>
     );
