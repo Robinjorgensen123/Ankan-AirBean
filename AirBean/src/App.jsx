@@ -8,7 +8,7 @@ function App() {
   return (
     <Router> 
       <div className="app-container">
-        <About/>
+        <Routing/>
       </div>
     </Router>  
   );

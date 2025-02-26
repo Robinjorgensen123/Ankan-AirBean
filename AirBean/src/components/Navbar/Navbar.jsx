@@ -7,28 +7,26 @@ import React, { useState } from 'react';
 
 
 
-export function Navbar ({closeMenu, setCloseMenu}) {
+export function Navbar ({ closeMenu }) {
 
 
     const handleCloseMenu = () => {
-        setCloseMenu(false);
+        closeMenu();
         console.log('button clicked');
     }
 
     return (
-        
-        <nav className={`navbar ${closeMenu ? 'open' : ''}`}>
-            <Routing/>
-            <div className='button-container'>
-                    <button className='close-button'>
-                        <img className='x-icon' onClick={handleCloseMenu} src={xButton} alt="X"/>
-                    </button>
-                </div>
-            <div className="links">
-                <NavLink to="/" exact onClick={(e) => e.preventDefault()}>Home</NavLink>
-                <NavLink to="/about" onClick={(e) => e.preventDefault()}>About</NavLink>
-               
-            </div>
+        <nav className="navbar">
+          <div className="button-container">
+            <button className="close-button" onClick={handleCloseMenu}>
+              <img className="x-icon" src={xButton} alt="Close Menu" />
+            </button>
+          </div>
+    
+          <div className="links">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+          </div>
         </nav>
-    )
-}
+      );
+    }
