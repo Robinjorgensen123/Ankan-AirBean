@@ -1,0 +1,31 @@
+/* Bakgrunden */
+.cart-overlay-background {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Innehållet */
+.cart-overlay-content {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column; /* Säkerställer att innehållet staplas vertikalt */
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 90%;   /* Anpassar sig bättre på mindre skärmar */
+  max-width: 400px; /* Hindrar att den blir för bred */
+  height: auto;  
+  max-height: 80vh; /* Förhindrar att den tar över hela skärmen */
+
+  border-radius: 10px; /* Rundade hörn */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Skugga för snygg effekt */
+}
