@@ -8,6 +8,7 @@ import OrderStatus from "./components/Api/OrderStatus";
 import CartManager from "./components/CartOverlay/CartManager";
 import DataDisplay from "./components/Api/Coffemenu";
 import "./App.css";
+import StatusPage from './pages/StatusPage/StatusPage';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <About />
         <OrderForm />
         <OrderStatus />
+        <StatusPage/>
       </div>
       </Router> 
     </>
