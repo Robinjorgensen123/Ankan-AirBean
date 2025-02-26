@@ -13,7 +13,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Router> 
       <div className="app-container">
         <Routing/>

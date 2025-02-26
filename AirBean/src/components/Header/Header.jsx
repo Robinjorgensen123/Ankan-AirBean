@@ -32,20 +32,20 @@ const Header = () => {
                     </button>
                     {isMenuOpen && <Navbar closeMenu={() => setIsMenuOpen(false)}/>}
                     <section>
-                        <button className='cart-button'>
+                        <button className='cart-button' onClick={toggleOverlay}>
                         <img className='cart-icon'
                         src={bagIcon}
                         alt="cart-icon"
                         />
                          <span className='cart-item-count'>0{/*hit skickas props från meny sidan */}</span>
                         </button>
-                        
+                        <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
                     </section>
 
             </section>
 
             {/* CartOverlay, som öppnas när cart-button klickas */}
-            <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
+            
         </header>
     );
 };

@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
-import Header from "../Header/Header";
-import CartOverlay from "./CartOverlay";
+import Header from "../Header/Header/"
+import CartOverlay from "./CartOverlay/"
 
 function CartManager() {
 
@@ -14,7 +14,7 @@ function CartManager() {
   return (
     <>
 
-      <Header toggleCart={toggleOverlay} />
+      {/* <Header toggleCart={toggleOverlay} /> */}
 
       <CartOverlay 
         isVisible={isOverlayOpen} 

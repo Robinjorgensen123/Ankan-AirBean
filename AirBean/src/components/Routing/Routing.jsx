@@ -9,7 +9,7 @@ const Routing = () => {
   return (
     <div>
         <Routes>
-          <Route path="/" element={<About />} /> {/* Startsidan */}
+         {/*  { <Route path="/" element={< />} /> {/* Startsidan }  */}
           <Route path="/about" element={<About />} />
          {/*  <Route path="/status" element={<Status />} /> {/* Status-sidan */}
         </Routes>
