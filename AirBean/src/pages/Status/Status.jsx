@@ -1,29 +1,24 @@
 import { use } from "react";
 import droneImg from "../../assets/Images/drone.png";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
-const status = () => {
-
-useEffect(() => {
-    fetch('https://airbean-9pcyw.ondigitalocean.app/api/beans/order/status/12345')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-
-}, []);
-
+const Status = () => {
 
 
     return (
         <div>
-            <p>{orderNr}</p>
+            <p></p>
             <img className="drone-img"  
             src={droneImg}
              alt="drone" 
              />
             <h1>Din beställning är påväg!</h1>
-            <p>{timeLeft}</p>
+            <p></p>
             <button>Ok,cool!</button>
         </div>
     );
 };
+
+export default Status;
