@@ -27,3 +27,20 @@ export async function getOrderStatus(orderNr) {
   const data = await response.json();
   return data;  // Returnerar status från API:t (men visar det inte här).
 }
+
+export const getKaffemeny = async () => {
+  try {
+    const response = await fetch(`${baseURL}/api/beans`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return data.menu;
+  } catch (error) {
+    console.error('Fel vid hämtning av kaffemeny:', error);
+    throw error;
+  }
+};
