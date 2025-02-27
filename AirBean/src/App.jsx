@@ -1,35 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';  // Importera Router
-import Routing from './Components/Routing/Routing'; // Importera Routing-komponenten
-import About from './pages/About/about';
-import Home from './pages/Home/home';
-import OrderForm from "./components/Api/OrderForm";
-import OrderStatus from "./components/Api/OrderStatus";
-import CartManager from "./components/CartOverlay/CartManager";
-import DataDisplay from "./components/Api/Coffemenu";
+import { BrowserRouter } from 'react-router-dom';  // Importera Router
 import "./App.css";
-import Menu from './pages/Menu/menu';
-import Status from './pages/Status/Status';
+import Routing from './Components/Routing/Routing';
 
 
 function App() {
   return (
     <>
-      <Router> 
-      <div className="app-container">
+      <BrowserRouter>
         <Routing/>
-        <DataDisplay />
-        <CartManager />
-        <Home />
-        <About />
-        <Menu />
-        <OrderForm />
-        <OrderStatus />
-        <Status/>
-      </div>
-      </Router> 
+      </BrowserRouter>
     </>
   );
 }
 
-export default App;
+export default App; 
+
+
+{/* <div className="app-container">
+
+      </div> */}

@@ -24,8 +24,9 @@ export function Navbar ({ closeMenu }) {
           </div>
     
           <div className="links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/menu">Meny</NavLink>
+            <NavLink to="/about">Vårt kaffe</NavLink>
+            <NavLink to="/status">Orderstatus</NavLink>
           </div>
         </nav>
       );
