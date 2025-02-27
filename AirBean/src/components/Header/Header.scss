@@ -27,7 +27,6 @@
     background-color: white;
     border-radius: 50%;
     margin: 10px;
-    
 }
 
 .hamburger-icon {
@@ -45,8 +44,6 @@
     top: 16px;
     left: 299px;
     margin: 10px;
-    
-    
 }
 
 .cart-item-count {
@@ -54,11 +51,13 @@
     background-color: #f4511e;
     border-radius: 50%;
     top: 12px;
+    right: 10px;
     width: 22px;
     height: 22px;
-    transform: rotate(-180deg);
     text-align: center;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

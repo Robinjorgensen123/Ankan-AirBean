@@ -2,11 +2,11 @@
 import { Navbar } from '../Navbar/Navbar';
 import React, { useState } from "react";
 import "./Header.scss";
-import navIcon from "./navicon.png"; // Hamburgermenybild
-import bagIcon from "./bag.png"; // Kundvagnsbild
+import navIcon from "../../assets/Images/navicon.png"; // Hamburgermenybild
+import bagIcon from '../../assets/Images/bag.png'; // Kundvagnsbild
 import CartOverlay from "../CartOverlay/CartOverlay";
 
-const Header = () => {
+const Header = ({ antalIKundvagn = 0 }) => {
     // State för meny & cart overlay
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOverlayVisible, setIsCartOverlayVisible] = useState(false);
@@ -37,7 +37,7 @@ const Header = () => {
                         src={bagIcon}
                         alt="cart-icon"
                         />
-                         <span className='cart-item-count'>0{/*hit skickas props från meny sidan */}</span>
+                         <span className="cart-item-count">{antalIKundvagn}</span>
                         </button>
                         <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
                     </section>

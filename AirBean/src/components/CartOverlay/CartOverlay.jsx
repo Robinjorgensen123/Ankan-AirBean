@@ -29,5 +29,5 @@ function CartOverlay({ isVisible, toggleOverlay }) {
     </div>
   );
 }
-
+//testar saker här
 export default CartOverlay;
