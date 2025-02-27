@@ -27,6 +27,8 @@
 
 .drone-img {
     background-color: #e4664d;
+    height: 119px;
+    width: 216px;
 }
 
 .cool-btn {
@@ -37,4 +39,21 @@ background-color: white;
 border-radius: 50px;
 font-weight: 700;
 font-size: 24px;
+cursor: pointer;
+border: none;
+
+}
+
+.cool-btn:hover {
+transform: scale(1.1);
+box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+background-color: #f0f1f1;
+}
+
+p {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 36px;
 }
