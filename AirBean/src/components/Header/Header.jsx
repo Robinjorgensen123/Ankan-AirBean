@@ -1,3 +1,5 @@
+
+import { Navbar } from '../Navbar/Navbar';
 import React, { useState } from "react";
 import "./Header.scss";
 import navIcon from "./navicon.png"; // Hamburgermenybild
@@ -22,22 +24,28 @@ const Header = () => {
     return (
         <header className="header">
             <section className="header-container">
-                {/* Hamburgermeny-knapp */}
-                <button className="hamburger-button" onClick={toggleMenu}>
-                    <img className="hamburger-icon" src={navIcon} alt="hamburger-menu" />
-                </button>
-
-                {/* Kundvagns-knapp */}
-                <section>
-                    <button className="cart-button" onClick={toggleOverlay}>
-                        <img className="cart-icon" src={bagIcon} alt="cart-icon" />
-                        <span className="cart-item-count">0{/* hit skickas props från meny */}</span>
+                <button className='hamburger-button' onClick={toggleMenu}>
+                    <img className='hambuger-icon'
+                    src={navIcon} 
+                    alt="hamburger-menu"
+                    />
                     </button>
-                </section>
+                    {isMenuOpen && <Navbar closeMenu={() => setIsMenuOpen(false)}/>}
+                    <section>
+                        <button className='cart-button' onClick={toggleOverlay}>
+                        <img className='cart-icon'
+                        src={bagIcon}
+                        alt="cart-icon"
+                        />
+                         <span className='cart-item-count'>0{/*hit skickas props från meny sidan */}</span>
+                        </button>
+                        <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
+                    </section>
+
             </section>
 
             {/* CartOverlay, som öppnas när cart-button klickas */}
-            <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
+            
         </header>
     );
 };

@@ -1,6 +1,5 @@
-// src/components/CartOverlay.jsx
 import React from "react";
-import "./CartOverlay.scss"; // Importera SCSS-filen
+import "./CartOverlay.scss"; 
 
 function CartOverlay({ isVisible, toggleOverlay }) {
   if (!isVisible) return null;
@@ -8,19 +7,18 @@ function CartOverlay({ isVisible, toggleOverlay }) {
   return (
     <div
       className="cart-overlay-background"
-      onClick={toggleOverlay} // Klick utanför stänger
     >
       <div
         className="cart-overlay-content"
-        onClick={(e) => e.stopPropagation()} // Förhindra stängning vid klick på innehållet
+        onClick={(e) => e.stopPropagation()} 
       >
+        <button className="close-button" onClick={toggleOverlay}>X</button>
         <h2 className="h2-overlay">Din beställning</h2>
-        <p>Här visas din cart-information</p>
-        <button onClick={toggleOverlay}>Stäng</button>
+        <p>Varor här</p>
+        <button className="buy-button">Take my money!</button>
       </div>
     </div>
   );
 }
 
 export default CartOverlay;
-
