@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';  // Importera Router
 import Routing from './Components/Routing/Routing'; // Importera Routing-komponenten
 import About from './pages/About/about';
+import Home from './pages/Home/home';
 import OrderForm from "./components/Api/OrderForm";
 import OrderStatus from "./components/Api/OrderStatus";
 import CartManager from "./components/CartOverlay/CartManager";
@@ -18,6 +19,7 @@ function App() {
         <Routing/>
         <DataDisplay />
         <CartManager />
+        <Home />
         <About />
         <Menu />
         <OrderForm />
