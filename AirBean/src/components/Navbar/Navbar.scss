@@ -22,16 +22,40 @@
 .links {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
-    border: 5px solid green;
     height: 100%;
+
+    a {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none; /* Ta bort standardunderstrykning */
+    position: relative; /* För att kunna positionera pseudo-elementet */
+    }
+    
+    a::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; /* Justera hur långt ned linjen ska vara */
+    left: 50%; /* Centrera linjen horisontellt */
+    transform: translateX(-50%); /* Justera för att centrera linjen exakt */
+    width: 48px; /* Sätt önskad bredd på linjen */
+    height: 1px; /* Justera tjockleken på linjen */
+    background-color: #FFFFFF33; /* Färg och opacitet på linjen */
+    border-radius: 2px; /* Rundade hörn på linjen */
+    }
+    
+    a:hover::after {
+    background-color: #FFFFFF; /* Gör linjen mer synlig vid hover */
+    }
+      
 }
 
-/* .links a {
-    font-family: pt-serif, weight(700);
-} */
 
 .close-button {
     background-color: transparent;
@@ -45,7 +69,6 @@
     justify-self: flex-end;
     cursor: pointer;
 }
-
 
 .button-container {
     display: flex;
