@@ -30,4 +30,5 @@ function CartOverlay({ isVisible, toggleOverlay }) {
   );
 }
 //testar saker här
+
 export default CartOverlay;
