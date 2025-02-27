@@ -12,6 +12,7 @@ const Routing = () => {
         <Routes>
          {/*  { <Route path="/" element={< />} /> {/* Startsidan }  */}
           <Route path="/about" element={<About />} />
+          {/* <Route path="/home" element={<Home/>} /> */}
          {/*  <Route path="/status" element={<Status />} /> {/* Status-sidan */}
         </Routes>
       
