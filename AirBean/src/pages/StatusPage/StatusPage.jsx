@@ -7,7 +7,7 @@ const Status = () => {
   const navigate = useNavigate(); // Skapa navigate-funktionen
 
   const handleClick = () => {
-    navigate('/about'); // När knappen trycks, navigera till /about
+    /* navigate('/menu');  */// När knappen trycks, navigera till /about
   };
 
   return (
