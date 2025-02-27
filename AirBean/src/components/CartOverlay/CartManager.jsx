@@ -9,6 +9,7 @@ function CartManager() {
 
   const toggleOverlay = () => {
     setIsOverlayOpen((prev) => !prev);
+    console.log("overlay state changed", !isOverlayOpen)
   };
 
   return (

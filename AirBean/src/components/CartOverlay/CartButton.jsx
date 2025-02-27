@@ -1,5 +1,7 @@
 import React from "react";
 
+//isOverlayOpen skickas in ifrån Cartmanager.jsx
+
 function CartButton({ isOverlayOpen, toggleOverlay }) {
   return (
     <button 
