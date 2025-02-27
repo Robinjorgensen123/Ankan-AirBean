@@ -37,7 +37,9 @@ export const getKaffemeny = async () => {
     }
 
     const data = await response.json();
-
+    
+    console.log('Kaffe API array:', data.menu);
+    
     return data.menu;
   } catch (error) {
     console.error('Fel vid hämtning av kaffemeny:', error);
