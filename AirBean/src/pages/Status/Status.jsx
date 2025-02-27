@@ -7,7 +7,7 @@ import "./Status.scss";
 const Status = () => {
 
   const [orderStatus, setOderStatus] = useState(null) // lagra status från APIet
-  const { orderNr } = useParams()
+  const { orderNr } = useParams() // UseParam anv för att hämta URL-Parametrar i en komponent
   const navigate = useNavigate(); // Skapa navigate-funktionen
 
   useEffect(() => {
