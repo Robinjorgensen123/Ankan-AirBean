@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import About from '../../pages/About/about';
+import Menu from '../../pages/Menu/menu';
 /* import Status from '../../pages/Status/Status'; */
 
 //Routing komponenten som innehåller Header och Routes

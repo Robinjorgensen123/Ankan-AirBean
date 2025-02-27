@@ -7,18 +7,19 @@ import OrderStatus from "./components/Api/OrderStatus";
 import CartManager from "./components/CartOverlay/CartManager";
 import DataDisplay from "./components/Api/Coffemenu";
 import "./App.css";
+import Menu from './pages/Menu/menu';
 
 
 function App() {
   return (
     <>
-      {/* <Header /> */}
       <Router> 
       <div className="app-container">
         <Routing/>
         <DataDisplay />
         <CartManager />
         <About />
+        <Menu />
         <OrderForm />
         <OrderStatus />
       </div>
