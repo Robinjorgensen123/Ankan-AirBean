@@ -3,6 +3,7 @@ import './Menu.scss';
 import { getKaffemeny } from '../../components/Api/apiService';
 import Header from '../../components/Header/Header';
 import plusIcon from '../../assets/Images/+.png'; 
+import Footer from '../../components/Footer/Footer';
 
 function Menu() {
   const [menuData, setMenuData] = useState(null);
@@ -64,6 +65,7 @@ function Menu() {
             }
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
