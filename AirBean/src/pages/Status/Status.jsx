@@ -8,8 +8,11 @@ const Status = () => {
 
   const [orderStatus, setOderStatus] = useState(null) // lagra status från APIet
   const { orderNr } = useParams() // UseParam anv för att hämta URL-Parametrar i en komponent
-  const navigate = useNavigate(); // Skapa navigate-funktionen
+  const navigate = useNavigate(); // React hook, för att kunna navigera till meny sidan
 
+
+  //useEffet för att hantera hämtningen av ordernr samt ETA("leveranstiden") från apiet när komponenten laddas
+  
   useEffect(() => {
     const fetchOrderStatus = async () => {
       try {
@@ -27,7 +30,9 @@ const Status = () => {
     }
   }, [orderNr])
 
-  
+  //hanterar eta parametern "tiden för leverens" som hämtas ifrån API:t
+  //om värdet är 0 så returneras meddelande att leveransen har levererats
+  //annars hämtas antal minuter ifrån apiet
   const formatTime = (eta) => {
     if (eta === 0) {
       return "The order has been delivered" // om tiden är 0, visa Leverarad status
@@ -35,8 +40,10 @@ const Status = () => {
     return `${eta} minutes`; // visa tiden i minuter om den ej är 0
   }
 
+
+  //klickevent för att navigera från statusPage till menuPage
   const handleClick = () => {
-  navigate('/menu');  /// När knappen trycks, navigera till /about
+  navigate('/menu');  
   };
 
   return (
@@ -48,7 +55,7 @@ const Status = () => {
           alt="drone" 
         />
         <h1>Din beställning <br /> är påväg!</h1>
-        <p>{formatTime(orderStatus?.eta)}</p>
+        <p>{orderStatus?.eta !== undefined ? formatTime(orderStatus?.eta) : null}</p>
         <button className="cool-btn" onClick={handleClick}>Ok, cool!</button>
       </div>
     </article>
