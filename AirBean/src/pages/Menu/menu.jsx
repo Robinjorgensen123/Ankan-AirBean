@@ -35,8 +35,9 @@ function Menu() {
 
   return (
     <>
-      <Header />
+      
       <div className="menu-page">
+        <Header />
         <div className="menu-display">
           <h2>Meny</h2>
           <div className="menu-items">
