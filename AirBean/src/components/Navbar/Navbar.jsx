@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Routing from '../Routing/Routing';
-/* import './Navbar.scss'; */
+import './Navbar.scss';
 import xButton from "../../assets/Images/x.png";
 import React, { useState } from 'react';
 

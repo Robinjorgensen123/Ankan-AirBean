@@ -1,29 +1,29 @@
-import { use } from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importera useNavigate
 import droneImg from "../../assets/Images/drone.png";
+import "./Status.scss";
 
+const Status = () => {
+  const navigate = useNavigate(); // Skapa navigate-funktionen
 
-const status = () => {
+  const handleClick = () => {
+    /* navigate('/menu');  */// När knappen trycks, navigera till /about
+  };
 
-useEffect(() => {
-    fetch('https://airbean-9pcyw.ondigitalocean.app/api/beans/order/status/12345')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-
-}, []);
-
-
-
-    return (
-        <div>
-            <p>{orderNr}</p>
-            <img className="drone-img"  
-            src={droneImg}
-             alt="drone" 
-             />
-            <h1>Din beställning är påväg!</h1>
-            <p>{timeLeft}</p>
-            <button>Ok,cool!</button>
-        </div>
-    );
+  return (
+    <article className="status-container">
+      <div className="status-card">
+        <p>Ordernummer </p>
+        <img className="drone-img"  
+          src={droneImg} 
+          alt="drone" 
+        />
+        <h1>Din beställning <br /> är påväg!</h1>
+        <p>test</p>
+        <button className="cool-btn" onClick={handleClick}>Ok, cool!</button>
+      </div>
+    </article>
+  );
 };
+
+export default Status;

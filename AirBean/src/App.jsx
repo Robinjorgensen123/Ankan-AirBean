@@ -9,7 +9,7 @@ import CartManager from "./components/CartOverlay/CartManager";
 import DataDisplay from "./components/Api/Coffemenu";
 import "./App.css";
 import Menu from './pages/Menu/menu';
-import StatusPage from './pages/StatusPage/StatusPage';
+import Status from './pages/Status/Status';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Menu />
         <OrderForm />
         <OrderStatus />
-        <StatusPage/>
+        <Status/>
       </div>
       </Router> 
     </>
