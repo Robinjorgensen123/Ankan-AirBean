@@ -35,31 +35,33 @@ function Menu() {
 
   return (
     <>
-      
       <div className="menu-page">
-        <Header />
+      <Header />
         <div className="menu-display">
           <h2>Meny</h2>
           <div className="menu-items">
-            {menuData && menuData.filter(item => item.title).map((item) => (
-              <div key={item.id} className="menu-item">
-                <div className="item-content">
-                  <img 
-                    src={plusIcon} 
-                    alt="Lägg till" 
-                    className="plus-icon" 
-                    onClick={() => handlePlusClick(item)}
-                  />
-                  <div className="item-info">
-                    <div className="item-title-row">
-                      <h3>{item.title}</h3>
-                      <div className="price">{item.price} kr</div>
+            {menuData && menuData
+              .filter(item => item.title !== "Semla")
+              .map((item) => (
+                <div key={item.id} className="menu-item">
+                  <div className="item-content">
+                    <img
+                      src={plusIcon}
+                      alt="Lägg till"
+                      className="plus-icon"
+                      onClick={() => handlePlusClick(item)}
+                    />
+                    <div className="item-info">
+                      <div className="item-title-row">
+                        <h3>{item.title}</h3>
+                        <div className="price">{item.price} kr</div>
+                      </div>
+                      <p>{item.desc}</p>
                     </div>
-                    <p>{item.desc}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         </div>
       </div>
