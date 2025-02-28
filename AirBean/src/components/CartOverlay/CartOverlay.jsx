@@ -14,7 +14,9 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
   
   // Funktion för att hantera klick på "Take my money!"
   const handleClick = () => {
-    navigate('/status');
+    const orderNr = Math.floor(Math.random() * 10000);  // Exempel på att skapa ett ordernummer
+    // Här skickar du med orderNummer till URL
+    navigate(`/status/${orderNr}`);
   };
   
   // Funktion för att ta bort en artikel
