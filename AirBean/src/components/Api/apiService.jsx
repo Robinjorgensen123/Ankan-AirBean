@@ -1,5 +1,6 @@
 const baseURL = "https://airbean-9pcyw.ondigitalocean.app";
 
+//Api för att Posta produkterna skickas till Cart
 export async function placeOrder(orderData) {
   const response = await fetch(`${baseURL}/api/beans/order`, {
     method: "POST",
@@ -14,9 +15,10 @@ export async function placeOrder(orderData) {
   }
 
   const data = await response.json();
-  return data;  // Returnerar objektet från API:t (men visar det inte här).
+  return data;  // Returnerar objektet från API:t 
 }
 
+// Denna data hanteras i Status.jsx
 export async function getOrderStatus(orderNr) {
   const response = await fetch(`${baseURL}/api/beans/order/status/${orderNr}`);
 
@@ -25,9 +27,11 @@ export async function getOrderStatus(orderNr) {
   }
 
   const data = await response.json();
-  return data;  // Returnerar status från API:t (men visar det inte här).
+  return data;  // Returnerar status från API:t
 }
 
+
+//Api för att hämta kaffemenyn
 export const getKaffemeny = async () => {
   try {
     const response = await fetch(`${baseURL}/api/beans`);
@@ -37,7 +41,9 @@ export const getKaffemeny = async () => {
     }
 
     const data = await response.json();
-
+    
+    console.log('Kaffe API array:', data.menu);
+    
     return data.menu;
   } catch (error) {
     console.error('Fel vid hämtning av kaffemeny:', error);

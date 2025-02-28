@@ -1,4 +1,3 @@
-/* @import "../../GlobalCSS/_Variables"; */
 @use "../../GlobalCSS/Variables" as *;
 
 
@@ -9,30 +8,52 @@
 .navbar {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     min-width: $MainCardWidth;
     height: 100vh;
     background-color: #2f2926;
     color: white;
-    padding: 10px;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 10001;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
     align-items: center;
-    border: 5px solid green;
     height: 100%;
-}
 
-/* .links a {
-    font-family: pt-serif, weight(700);
-} */
+    a {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none; 
+    position: relative; 
+    }
+    
+    a::after {
+    content: '';
+    position: absolute;
+    bottom: -15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 48px; 
+    height: 1px; 
+    background-color: #FFFFFF33; 
+    border-radius: 2px; 
+    }
+    
+    a:hover::after {
+    background-color: #FFFFFF; 
+    }
+      
+}
 
 .close-button {
     background-color: transparent;
@@ -46,7 +67,6 @@
     justify-self: flex-end;
     cursor: pointer;
 }
-
 
 .button-container {
     display: flex;

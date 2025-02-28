@@ -2,6 +2,7 @@ import React from 'react';
 import './about.scss';
 import evaImage from '../../assets/Images/eva-cortado.jpg';
 import Header from '../../Components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 function About() {
   return (
@@ -56,6 +57,7 @@ function About() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

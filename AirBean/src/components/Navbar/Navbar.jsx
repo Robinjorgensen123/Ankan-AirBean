@@ -1,10 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import Routing from '../Routing/Routing';
-/* import './Navbar.scss'; */
+import './Navbar.scss';
 import xButton from "../../assets/Images/x.png";
 import React, { useState } from 'react';
-
-
 
 
 export function Navbar ({ closeMenu }) {
@@ -24,8 +22,9 @@ export function Navbar ({ closeMenu }) {
           </div>
     
           <div className="links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/menu">Meny</NavLink>
+            <NavLink to="/about">Vårt kaffe</NavLink>
+            <NavLink to="/status/:orderNr">Orderstatus</NavLink>
           </div>
         </nav>
       );

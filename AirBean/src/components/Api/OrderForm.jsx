@@ -21,9 +21,7 @@ function OrderForm() {
     try {
       const response = await placeOrder(orderData);
       setServerResponse(response);
-      // Här har du nu API-svaret i "serverResponse"
-      // Du visar det dock inte om du inte vill,
-      // men kan console.log för att se datan.
+   
       console.log("Order-respons:", response);
     } catch (error) {
       console.error("Ett fel uppstod:", error);
@@ -36,7 +34,6 @@ function OrderForm() {
       <button onClick={handleSetOrder}>Lägg till exempel-order i state</button>
       <br />
       <button onClick={handlePlaceOrder}>Skicka order</button>
-      {/* Inget visas per default. Du kan visa eller inte visa utifrån behov. */}
     </div>
   );
 }

@@ -25,7 +25,6 @@ function OrderStatus() {
         onChange={(e) => setOrderNr(e.target.value)}
       />
       <button onClick={handleGetStatus}>Hämta status</button>
-      {/* Samma sak här, vi loggar data i konsolen utan att visa det i UI. */}
     </div>
   );
 }
