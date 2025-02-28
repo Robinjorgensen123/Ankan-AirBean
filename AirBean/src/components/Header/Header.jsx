@@ -1,4 +1,3 @@
-
 import { Navbar } from '../Navbar/Navbar';
 import React, { useState, useEffect } from 'react'; // Lägg till useEffect
 import navIcon from '../../assets/Images/navicon.png'; // Hamburgermenybild
@@ -82,7 +81,7 @@ const Header = ({ antalIKundvagn = 0 }) => {
               <span className="cart-item-count">{storedAntalIKundvagn}</span>
             )}
           </button>
-          <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
+          <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} setStoredAntalIKundvagn={setStoredAntalIKundvagn} />
         </section>
       </section>
     </header>
