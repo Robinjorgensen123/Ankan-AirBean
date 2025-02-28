@@ -5,8 +5,6 @@ import xButton from "../../assets/Images/x.png";
 import React, { useState } from 'react';
 
 
-
-
 export function Navbar ({ closeMenu }) {
 
 

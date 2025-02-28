@@ -14,9 +14,6 @@ function CartManager() {
 
   return (
     <>
-
-      {/* <Header toggleCart={toggleOverlay} /> */}
-
       <CartOverlay 
         isVisible={isOverlayOpen} 
         toggleOverlay={toggleOverlay}

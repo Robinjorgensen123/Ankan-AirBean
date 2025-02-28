@@ -30,7 +30,7 @@ const DataDisplay = () => {
     fetchMenu();
   }, []);
 
-  return null;  // Returnerar null istället för HTML
+  return null;  
 };
 
 export default DataDisplay;

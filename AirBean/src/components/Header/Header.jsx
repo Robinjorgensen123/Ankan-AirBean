@@ -41,11 +41,7 @@ const Header = ({ antalIKundvagn = 0 }) => {
                         </button>
                         <CartOverlay isVisible={isCartOverlayVisible} toggleOverlay={toggleOverlay} />
                     </section>
-
             </section>
-
-            {/* CartOverlay, som öppnas när cart-button klickas */}
-            
         </header>
     );
 };

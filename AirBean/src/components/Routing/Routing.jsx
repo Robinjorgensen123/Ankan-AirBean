@@ -4,9 +4,7 @@ import About from '../../pages/About/about';
 import Home from '../../pages/Home/home';
 import Menu from '../../pages/Menu/menu';
 import Status from '../../pages/Status/Status';
-/* import Status from '../../pages/Status/Status'; */
 
-//Routing komponenten som innehåller Header och Routes
 const Routing = () => {
 
   return (
