@@ -36,24 +36,34 @@
 }
 
 .cart-button {
+    position: absolute;
     height: 60px;
     width: 60px;
     background-color:#2f2926 ;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
-    top: 16px;
+    /* top: 16px; */
+    top: -2px;
     left: 299px;
     margin: 10px;
+
+    z-index: 10000;
 }
 
 .cart-item-count {
     position: absolute;
     background-color: #f4511e;
     border-radius: 50%;
-    top: 12px;
-    right: 10px;
+
+    top: -4px;
     width: 22px;
     height: 22px;
+    right: 2px;
+    transform: rotate(-180deg);
+
+ 
+
     text-align: center;
     display: flex;
     align-items: center;
