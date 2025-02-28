@@ -19,6 +19,7 @@ const Header = ({ antalIKundvagn = 0 }) => {
     // Funktion för att öppna/stänga cart overlay
     const toggleOverlay = () => {
         setIsCartOverlayVisible(!isCartOverlayVisible);
+        
     };
 
     return (

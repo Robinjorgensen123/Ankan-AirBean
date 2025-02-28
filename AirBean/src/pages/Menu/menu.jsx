@@ -4,6 +4,7 @@ import { getKaffemeny } from '../../components/Api/apiService';
 import Header from '../../components/Header/Header';
 import plusIcon from '../../assets/Images/+.png'; 
 import Footer from '../../components/Footer/Footer';
+import CartOverlay from '../../components/CartOverlay/CartOverlay';
 
 function Menu() {
   const [menuData, setMenuData] = useState(null);
@@ -11,9 +12,30 @@ function Menu() {
   const [error, setError] = useState(null);
   const [kundvagnsArtiklar, setKundvagnsArtiklar] = useState([]);
 
+  const [isCartOverlayVisible, setIsCartOverlayVisible] = useState(false);
+  
+  const toggleOverlay = () => {
+    setIsCartOverlayVisible(!isCartOverlayVisible);
+  };
+
+  useEffect(() => {
+    const savedCart = localStorage.getItem('kundvagn');
+    if (savedCart) {
+      const parsedCart = JSON.parse(savedCart);
+      console.log("Varukorg hämtad från localStorage:", parsedCart); // Kontrollera vad som hämtas
+      setKundvagnsArtiklar(parsedCart); // Återställ varukorgen från localStorage
+    } else {
+      console.log("Ingen varukorg i localStorage");
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("kundvagn", JSON.stringify(kundvagnsArtiklar));
+    console.log("Sparar kundvagn i localStorage:", kundvagnsArtiklar);
+  }, [kundvagnsArtiklar]);
+
   const handlePlusClick = (item) => {
-    console.log('Produkt detaljer:', item);
-    setKundvagnsArtiklar(tidigare => [...tidigare, item]);
+    setKundvagnsArtiklar(previous => [...previous, item]);
   };
 
   useEffect(() => {
@@ -21,6 +43,7 @@ function Menu() {
       try {
         setLoading(true);
         const result = await getKaffemeny();
+        console.log('Menydata hämtad', result);
         setMenuData(result);
       } catch (err) {
         setError(err.message);
@@ -39,7 +62,7 @@ function Menu() {
   return (
     <>
       <div className="menu-page">
-      <Header antalIKundvagn={kundvagnsArtiklar.length} />
+        <Header antalIKundvagn={kundvagnsArtiklar.length} />
         <div className="menu-display">
           <h2>Meny</h2>
           <div className="menu-items">
@@ -68,6 +91,13 @@ function Menu() {
           </div>
         </div>
         <Footer />
+
+        {/* 🔹 Skickar alltid uppdaterad kundvagnsArtiklar */}
+        <CartOverlay 
+          isVisible={isCartOverlayVisible} 
+          toggleOverlay={toggleOverlay} 
+          kundvagnsArtiklar={kundvagnsArtiklar} 
+        />
       </div>
     </>
   );
