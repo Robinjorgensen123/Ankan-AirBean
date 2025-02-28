@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import './Menu.scss';
-import { getKaffemeny } from '../../components/Api/apiService';
 import Header from '../../components/Header/Header';
-import plusIcon from '../../assets/Images/+.png'; 
+import { getKaffemeny } from '../../components/Api/apiService';
+import { addToCart, getCartItems } from '../../utils/cartUtils'; // Importera nya funktioner
+import plusIcon from '../../assets/Images/+.png';
 import Footer from '../../components/Footer/Footer';
+import './Menu.scss';
 
 function Menu() {
   const [menuData, setMenuData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [kundvagnsArtiklar, setKundvagnsArtiklar] = useState([]);
+  
+  // Hämta kundvagnsartiklar från localStorage
+  const [kundvagnsArtiklar, setKundvagnsArtiklar] = useState(getCartItems());
 
   const handlePlusClick = (item) => {
     console.log('Produkt detaljer:', item);
-    setKundvagnsArtiklar(tidigare => [...tidigare, item]);
+    
+    // Använd addToCart-funktionen och uppdatera state
+    const updatedCart = addToCart(item);
+    setKundvagnsArtiklar(updatedCart);
   };
 
   useEffect(() => {
@@ -30,6 +36,19 @@ function Menu() {
     };
 
     fetchMenu();
+  }, []);
+
+  // Lyssna på localStorage-ändringar
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setKundvagnsArtiklar(getCartItems());
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
 
   if (loading) return <div>Laddar...</div>;
@@ -63,12 +82,12 @@ function Menu() {
                     </div>
                   </div>
                 </div>
-              ))
-            }
+              ))}
           </div>
         </div>
         <Footer />
       </div>
+      
     </>
   );
 }
