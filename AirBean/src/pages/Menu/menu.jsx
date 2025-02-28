@@ -9,9 +9,11 @@ function Menu() {
   const [menuData, setMenuData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [kundvagnsArtiklar, setKundvagnsArtiklar] = useState([]);
 
   const handlePlusClick = (item) => {
     console.log('Produkt detaljer:', item);
+    setKundvagnsArtiklar(tidigare => [...tidigare, item]);
   };
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function Menu() {
   return (
     <>
       <div className="menu-page">
-      <Header />
+      <Header antalIKundvagn={kundvagnsArtiklar.length} />
         <div className="menu-display">
           <h2>Meny</h2>
           <div className="menu-items">

@@ -9,7 +9,7 @@
 .navbar {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     min-width: $MainCardWidth;
     height: 100vh;
     background-color: #2f2926;
