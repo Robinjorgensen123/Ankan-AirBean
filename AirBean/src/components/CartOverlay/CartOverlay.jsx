@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCartItems, removeFromCart } from '../../utils/cartUtils';
+import { placeOrder } from '../Api/apiService'; // Justera sökvägen enligt din projektstruktur
 import './CartOverlay.scss';
 
 function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
@@ -13,10 +14,45 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
   const cartItems = getCartItems();
   
   // Funktion för att hantera klick på "Take my money!"
-  const handleClick = () => {
-    const orderNr = Math.floor(Math.random() * 10000);  // Exempel på att skapa ett ordernummer
-    // Här skickar du med orderNummer till URL
-    navigate(`/status/${orderNr}`);
+  const handleClick = async () => {
+    try {
+      // Förbered order-data enligt API:ets format
+      const orderData = {
+        details: {
+          order: cartItems.map(item => ({
+            name: item.title,
+            price: item.price
+          }))
+        }
+      };
+      
+      console.log("Orderdata som skickas till API:", orderData);
+      
+      // Anropa API för att skapa en order
+      const response = await placeOrder(orderData);
+      
+      console.log("API-svar:", response);
+      
+      // Hämta ordernummer från API-svaret
+      const orderNr = response.orderNr;
+      
+      // Spara ordernummer och leveranstid i localStorage
+      localStorage.setItem('orderNumber', orderNr);
+      
+      // Om API:et returnerar ETA, spara leveranstid
+      if (response.eta) {
+        const deliveryTime = new Date();
+        deliveryTime.setMinutes(deliveryTime.getMinutes() + response.eta);
+        localStorage.setItem('deliveryTime', deliveryTime.toISOString());
+      }
+      
+      // Navigera till status-sidan med ordernumret från API
+      navigate(`/status/${orderNr}`);
+      
+    } catch (error) {
+      console.error('Error creating order:', error);
+      alert('Det gick inte att skapa din order. Försök igen senare.');
+    }
   };
   
   // Funktion för att ta bort en artikel
