@@ -5,11 +5,11 @@
  
  const Status = () => {
  
-   const [etaTime, setEtaTime] = useState(null);  // Tid för leverans
-   const [loading, setLoading] = useState(true);  // Loading state
-   const [error, setError] = useState(null);  // Eventuella felmeddelanden
-   const { orderNr } = useParams();  // Hämtar ordernummer från URL
-   const navigate = useNavigate();  // React hook för att navigera
+   const [etaTime, setEtaTime] = useState(null);  
+   const [loading, setLoading] = useState(true);  
+   const [error, setError] = useState(null);  
+   const { orderNr } = useParams();  
+   const navigate = useNavigate();  
  
    // useEffect för att hämta leveranstid från localStorage och beräkna minuter kvar
    useEffect(() => {

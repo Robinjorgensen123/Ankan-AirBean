@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCartItems, removeFromCart } from '../../utils/cartUtils';
-import { placeOrder } from '../Api/apiService'; // Justera sökvägen enligt din projektstruktur
+import { placeOrder } from '../Api/apiService'; 
 import './CartOverlay.scss';
 
 function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
@@ -9,14 +9,15 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
   console.log('CartOverlay is visible');
   
   const navigate = useNavigate();
-  
-  // Hämta kundvagnsartiklar från localStorage
   const cartItems = getCartItems();
+  const hasCoffee = cartItems.some(item => item.title === "Bryggkaffe");
+  const hasPastry = cartItems.some(item => item.title === "Gustav Adolfsbakelse");
+  const discount = (hasCoffee && hasPastry) ? 49 : 0;  
+  const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0) - discount;  
   
-  // Funktion för att hantera klick på "Take my money!"
+
   const handleClick = async () => {
     try {
-      // Förbered order-data enligt API:ets format
       const orderData = {
         details: {
           order: cartItems.map(item => ({
@@ -28,25 +29,20 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
       
       console.log("Orderdata som skickas till API:", orderData);
       
-      // Anropa API för att skapa en order
       const response = await placeOrder(orderData);
       
       console.log("API-svar:", response);
       
-      // Hämta ordernummer från API-svaret
       const orderNr = response.orderNr;
       
-      // Spara ordernummer och leveranstid i localStorage
       localStorage.setItem('orderNumber', orderNr);
       
-      // Om API:et returnerar ETA, spara leveranstid
       if (response.eta) {
         const deliveryTime = new Date();
         deliveryTime.setMinutes(deliveryTime.getMinutes() + response.eta);
         localStorage.setItem('deliveryTime', deliveryTime.toISOString());
       }
       
-      // Navigera till status-sidan med ordernumret från API
       navigate(`/status/${orderNr}`);
       
     } catch (error) {
@@ -55,19 +51,12 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
     }
   };
   
-  // Funktion för att ta bort en artikel
   const handleRemoveItem = (index) => {
-    // Ta bort varan från localStorage
+   
     const updatedItems = removeFromCart(index);
-
-    // Uppdatera antalet varor i Header
-    setStoredAntalIKundvagn(updatedItems.length);  // Uppdatera antalet varor i Header
-
-    // Ingen anledning att stänga overlayen här längre
+    
+    setStoredAntalIKundvagn(updatedItems.length); 
   };
-
-  // Beräkna totalsumma
-  const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <div className="cart-overlay-background">
@@ -95,6 +84,11 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
               <span className="total-text">Total:</span>
               <span className="total-price">{totalPrice} kr</span>
             </div>
+            {discount > 0 && (
+              <div className="discount-row">
+                <span className="discount-text">Rabatt (kampanj): -{discount} kr</span>
+              </div>
+            )}
             <p className="include">inkl moms + drönarleverans</p>
             
             <button className="buy-button" onClick={handleClick}>
@@ -108,3 +102,4 @@ function CartOverlay({ isVisible, toggleOverlay, setStoredAntalIKundvagn }) {
 }
 
 export default CartOverlay;
+
